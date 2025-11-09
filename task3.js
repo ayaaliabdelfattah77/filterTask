@@ -9,10 +9,12 @@ const employees = [
   { id: 8, name: "Mona", department: "HR", salary: 8000, experience: 5, performance: 4.5, isActive: true },
 ];
 
-
+//الموظفون النشيطون فقط
 const activeEmployee = employees.filter((employee)=>employee.isActive)
 console.log(activeEmployee);
 
+
+//الموظفون اللى اداوهم اكبرمن 4.5
 const performance = activeEmployee.filter((user) =>user.performance >= 4.5)
 console.log(performance)
 
@@ -21,11 +23,7 @@ const employeeNumber = performance.reduce((acc,current) =>acc +current.salary,0)
 const avg = employeeNumber/ performance.length
 console.log(`المتوسط الحسابى للمموظفين اداوهم اكبر من 4.5: ${avg}`)
 
-
-
-
-
-
+//الاسماء / القسم / المرتب بعد10%
 
  const names = performance.map((employe)=>{
     const incresing = employe.salary * .10 
@@ -35,6 +33,8 @@ console.log(`المتوسط الحسابى للمموظفين اداوهم اك�
 
  })
  
+
+ //الاموظف ذو الاداء الاعلى 
  const maxPerformance = Math.max(...employees.map(employe => employe.performance));
 
  
